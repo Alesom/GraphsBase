@@ -7,11 +7,20 @@ con = sqlite3.connect("GraphsBase.db")
 cur = con.cursor();
 
 
-cur.execute('SELECT N, M , Delta FROM GraphBig ')
+cur.execute('SELECT N, M, Delta FROM GraphBig ')
 Line2 = cur.fetchall()
 for  j in Line2:
 	print j
 
+print "Nucleo"
+
+cur.execute('SELECT N, M, Edges,ciclico FROM NucleoBig')
+Line2 = cur.fetchall()
+for  j in Line2:
+	print j
+
+
+'''
 print "Possiveis Overfulll"
 
 cur.execute('SELECT N, Delta FROM GraphBig')
@@ -22,7 +31,7 @@ Line2 = cur.fetchall()
 for  j in Line2:
 	print j
 
-
+'''
 
 
 
